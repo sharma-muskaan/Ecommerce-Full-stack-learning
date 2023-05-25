@@ -1,0 +1,1 @@
+Routes will contain all post and get routes. 

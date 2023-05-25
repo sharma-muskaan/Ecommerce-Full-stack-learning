@@ -1,0 +1,1 @@
+Config contains utilities which will be used throughout the app, and also DB connections. 

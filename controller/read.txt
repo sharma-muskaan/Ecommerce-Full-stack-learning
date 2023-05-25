@@ -1,0 +1,1 @@
+Controller will connect to the models, and functionalities such as create, read, update will happen here. 
