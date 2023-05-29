@@ -1,1 +1,13 @@
 Models contains schemas.
+
+User Model:
+    - This model uses something known as bcrypt. bcrypt is a password securing system which uses salts to slow down a hash. 
+    A normal MD5 hash can be decrypted with a supercomputer cluster which can solve a 6 character long, alphanumeric, lowercase
+    password at around 70,000,000 passwords a second. At this rate we can be cracking one password per second. 
+
+    - bcrypt is used because it uses a variant of the blowfish encryption algorithm's keying schedule, and introduces a work factor
+    which allows you to determine how expensive the hash function will be. As computers get faster, you can increase the work factor, 
+    and the hash will get slower. 
+
+    - bcrypt is around 5 orders of magnitude slower than MD5. So instead of solving a password every 40 seconds, you will be solving
+    one every 12 years. 
