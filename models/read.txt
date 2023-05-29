@@ -4,10 +4,14 @@ User Model:
     - This model uses something known as bcrypt. bcrypt is a password securing system which uses salts to slow down a hash. 
     A normal MD5 hash can be decrypted with a supercomputer cluster which can solve a 6 character long, alphanumeric, lowercase
     password at around 70,000,000 passwords a second. At this rate we can be cracking one password per second. 
-
     - bcrypt is used because it uses a variant of the blowfish encryption algorithm's keying schedule, and introduces a work factor
     which allows you to determine how expensive the hash function will be. As computers get faster, you can increase the work factor, 
     and the hash will get slower. 
-
     - bcrypt is around 5 orders of magnitude slower than MD5. So instead of solving a password every 40 seconds, you will be solving
     one every 12 years. 
+    - bcrypt also protects against rainbow table attacks. A rainbow table is when a 'hacker' creates a bunch of plaintext passwords 
+    and converts those into hashes, puts all those hashes beside their respective plaintext password. Then they go into a compromised 
+    database which stores a bunch of hashes which are the converted version of plaintext passwords, and tries to find a match. 
+    When one of these match, they use the plaintext password to log in to a user's account, and can do whatever they want. 
+    - Hashing is a one-way function. Once you encrypt a plaintext into a hash, there is no way to decrypt that hash back into plaintext
+    unless you use a hash crack.
